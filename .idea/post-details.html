@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Post-details</title>
+</head>
+<body>
+
+<script>
+  // На странице post-details.html:
+  // 7 Вивести всю, без виключення, інформацію про об'єкт post на який клікнули .
+  // 8 Нижчє інформаці про пост, вивести всі коментарі поточного поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
+  console.log(JSON.parse(localStorage.getItem('posts')))
+
+  let div=document.createElement('div')
+  const posts = JSON.parse(localStorage.getItem('posts'));
+
+  if (posts.length > 0) {
+    div.innerText = getUserData(posts[0]);
+    document.body.appendChild(div);
+  };
+
+  function getUserData(post) {
+    const postProperties = [];
+    let res= " ";
+
+    iterate_properties(post, postProperties);
+    console.log(postProperties)
+    postProperties.forEach(item => {
+      res += `${item}\n`
+    })
+    return res;
+  }
+
+  function iterate_properties(obj, postProperties){
+    Object.keys(obj).forEach(key => {
+
+      if (typeof obj[key] !== 'object') {
+        postProperties.push(`${key} : ${obj[key]}`);
+      }
+
+      if (typeof obj[key] === 'object' && obj[key] !== null) {
+        iterate_properties(obj[key], postProperties);
+      }
+    })
+  };
+
+</script>
+</body>
+</html>

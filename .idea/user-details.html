@@ -16,33 +16,77 @@
   // 2 Вивести id,name всіх user в index.html. Окремий блок для кожного user.
   // 3 Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  на сторінку user-details.html, котра має детальну інфорацію про об'єкт на який клікнули
 
-  // let url = new URL(location.href);
-  // let id = url.searchParams.get('id');
-  // console.log(id);
-  //
-  // fetch()
-  //         .then(resp => resp.json())
-  //         .then(posts => {
-  //           let ul = document.createElement('ul');
-  //           for (const post of posts) {
-  //             let li = document.createElement('li');
-  //             li.innerText = post.title;
-  //             ul.appendChild(li);
-  //           }
-  //
-  //           document.body.appendChild(ul);
-  //
-  //         });
-
     console.log(JSON.parse(localStorage.getItem('users')))
-    let div=document.createElement(div)
-    div.innerText(JSON.parse(localStorage.getItem('users')))
-    document.body.appendChild(div);
 
+    let div=document.createElement('div')
+    const users = JSON.parse(localStorage.getItem('users'));
 
+    if (users.length > 0) {
+      div.innerText = getUserData(users[0]);
+      document.body.appendChild(div);
+    };
 
+    function getUserData(user) {
+        const userProperties = [];
+        let res= " ";
 
+        iterate_properties(user, userProperties);
+        console.log(userProperties)
+        userProperties.forEach(item => {
+          res += `${item}\n`
+        })
+        return res;
+    }
 
+  function iterate_properties(obj, userProperties){
+    Object.keys(obj).forEach(key => {
+
+      if (typeof obj[key] !== 'object') {
+        userProperties.push(`${key} : ${obj[key]}`);
+      }
+
+      if (typeof obj[key] === 'object' && obj[key] !== null) {
+        iterate_properties(obj[key], userProperties);
+      }
+    })
+  };
+  // 5 Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
+  // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
+  //     6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра має детальну інфу про поточний пост.
+
+  const button = document.createElement('button');
+  button.innerText = 'post of current user';
+  document.body.appendChild(button);
+  button.addEventListener('click', function () {
+
+    let url = new URL(location.href);
+    console.log(url);
+
+    let id = url.searchParams.get('id');
+    console.log(id);
+
+    fetch(`http://jsonplaceholder.typicode.com/users/${id}/posts`)
+            .then(resp => resp.json())
+            .then(posts => {
+              let ul = document.createElement('ul');
+              for (const post of posts) {
+                let li = document.createElement('li');
+                li.innerText = post.title;
+                ul.appendChild(li);
+
+                let a = document.createElement('a');
+                a.innerText = ' '+'Post of current user';
+                a.onclick = function () {
+                  let array=JSON.parse(localStorage.getItem('posts')) || [];
+                  array.push(post);
+                  localStorage.setItem('posts',JSON.stringify(array));
+                }
+                a.href = `post-details.html?id=${post.title}`
+                li.appendChild(a)
+              }
+              document.body.appendChild(ul);
+            });
+  })
 </script>
 </body>
 </html>
