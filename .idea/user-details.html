@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>user-details</title>
+</head>
+<body>
+
+<script>
+  // В index.html
+  // 1 отримати масив об'єктів з endpoint`а https://jsonplaceholder.typicode.com/users
+  // 2 Вивести id,name всіх user в index.html. Окремий блок для кожного user.
+  // 3 Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  на сторінку user-details.html, котра має детальну інфорацію про об'єкт на який клікнули
+
+  // let url = new URL(location.href);
+  // let id = url.searchParams.get('id');
+  // console.log(id);
+  //
+  // fetch()
+  //         .then(resp => resp.json())
+  //         .then(posts => {
+  //           let ul = document.createElement('ul');
+  //           for (const post of posts) {
+  //             let li = document.createElement('li');
+  //             li.innerText = post.title;
+  //             ul.appendChild(li);
+  //           }
+  //
+  //           document.body.appendChild(ul);
+  //
+  //         });
+
+    console.log(JSON.parse(localStorage.getItem('users')))
+    let div=document.createElement(div)
+    div.innerText(JSON.parse(localStorage.getItem('users')))
+    document.body.appendChild(div);
+
+
+
+
+
+</script>
+</body>
+</html>
