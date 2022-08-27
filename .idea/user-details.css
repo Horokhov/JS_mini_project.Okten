@@ -1,0 +1,30 @@
+/*user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє, на 90% ширини сторінки, по центру.*/
+body {
+    background-color: darkred;
+}
+
+div {
+    background-color: plum;
+    border: 1px solid red;
+    text-align: center;
+}
+
+button {
+    width: 90%;
+    position: center;
+    margin: 5%;
+}
+
+ul {
+    background-color: plum;
+}
+
+li {
+    margin: 10px;
+    border: 1px solid red;
+    text-align: center;
+    justify-content: center;
+    display: grid;
+    align-items: center;
+    background-color: plum;
+}

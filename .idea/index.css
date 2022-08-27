@@ -1,0 +1,20 @@
+/*//index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.*!*/
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    border: 1px solid black;
+    width: 100%;
+    background-color: darkred;
+}
+
+div {
+    margin: 10px;
+    border: 1px solid red;
+    text-align: center;
+    justify-content: center;
+    display: grid;
+    align-items: center;
+    background-color: plum;
+}
+

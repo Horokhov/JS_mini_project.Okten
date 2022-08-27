@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8bbfac3-de8e-4648-a0ea-0931119d172f" name="Changes" comment="Mini project 3/4">
+      <change afterPath="$PROJECT_DIR$/.idea/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/user-details.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/post-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/post-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/user-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/user-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -30,15 +34,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "list.type.of.created.stylesheet": "CSS"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="MiniProject" />
@@ -68,7 +73,8 @@
       <workItem from="1661452891040" duration="1267000" />
       <workItem from="1661465189658" duration="3737000" />
       <workItem from="1661553296525" duration="4949000" />
-      <workItem from="1661622167382" duration="1503000" />
+      <workItem from="1661622167382" duration="1521000" />
+      <workItem from="1661630845799" duration="7971000" />
     </task>
     <task id="LOCAL-00001" summary="35wttr">
       <created>1661444694961</created>
@@ -91,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661468821154</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mini project 3/4">
+      <created>1661623693949</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661623693949</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
