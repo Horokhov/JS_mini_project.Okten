@@ -1,0 +1,24 @@
+/*post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.*/
+body {
+    background-color: darkred;
+}
+
+div {
+    background-color: plum;
+    border: 1px solid red;
+    text-align: center;
+}
+
+ul {
+    background-color: plum;
+}
+
+li {
+    margin: 10px;
+    border: 1px solid red;
+    text-align: center;
+    justify-content: center;
+    display: grid;
+    align-items: center;
+    background-color: plum;
+}
