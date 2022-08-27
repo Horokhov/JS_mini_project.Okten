@@ -12,7 +12,7 @@
 <script>
   // На странице post-details.html:
   // 7 Вивести всю, без виключення, інформацію про об'єкт post на який клікнули .
-  // 8 Нижчє інформаці про пост, вивести всі коментарі поточного поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
+
   console.log(JSON.parse(localStorage.getItem('posts')))
 
   let div=document.createElement('div')
@@ -47,6 +47,31 @@
       }
     })
   };
+  // 8 Нижчє інформаці про пост, вивести всі коментарі поточн
+  // ого поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/post_id/comments)
+
+
+
+  let url = new URL(location.href);
+  console.log(url);
+
+  console.log(posts)
+
+  fetch(`https://jsonplaceholder.typicode.com/posts/${posts[0].id}/comments`)
+          .then(resp => resp.json())
+          .then(comments => {
+            let ul = document.createElement('ul');
+            for (const comment of comments) {
+              let li = document.createElement('li');
+              li.innerText = comment.body;
+              ul.appendChild(li);
+
+            }
+
+            document.body.appendChild(ul);
+
+          })
+
 
 </script>
 </body>
